@@ -1,5 +1,6 @@
 class Wrapper:
-    def wrap(self, string, column_length):
+    @staticmethod
+    def wrap(string, column_length):
         # if length of string is less than column_length, simply return string
         if len(string) <= column_length:
             return string
@@ -23,4 +24,4 @@ class Wrapper:
         # with string sliced from breakPoint to end of string
         line = string[:breakPoint] + "\n"
         remaining_text = string[breakPoint:].strip()
-        return line + self.wrap(remaining_text, column_length)
+        return line + Wrapper.wrap(remaining_text, column_length)
