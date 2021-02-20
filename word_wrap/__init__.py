@@ -9,14 +9,13 @@ class Wrapper:
         #i.e., the breakPoint. If no space found, rfind will return -1
         breakPoint = string.rfind(" ", 0, column_length+1)
         
-        # find the length of the next word in the string
-        next_word_length = 0
+        # find the length of the next word in the string, after breakPoint
         afterBreak = breakPoint+1
         if " " in string[afterBreak:]:
             next_word_length = string[afterBreak:].find(" ")
         else:
             next_word_length = len(string[afterBreak:])
-        
+
         if breakPoint == -1 or next_word_length > column_length:
             breakPoint = column_length
         
