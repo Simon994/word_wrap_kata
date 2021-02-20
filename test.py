@@ -43,6 +43,10 @@ class TestWrapper(unittest.TestCase):
     def test_wrapper_wraps_two_words_with_second_word_longer_than_column_length(self):
         wrapped_result = Wrapper.wrap('bean beanandgone', 10)
         self.assertEqual('bean beana\nndgone', wrapped_result)
+    
+    def test_wrapper_wraps_very_long_word_across_multiple_lines(self):
+        wrapped_result = Wrapper.wrap('supercalifragilisticexpialidocious', 10)
+        self.assertEqual('supercalif\nragilistic\nexpialidoc\nious', wrapped_result)
 
 if __name__ == '__main__':
     unittest.main()
