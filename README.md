@@ -8,7 +8,7 @@ You write a class called Wrapper, that has a single static function named wrap t
 Like a word processor, break the line by replacing the last space in a line with a newline.
 
 ### Additional point
-In implementing the above, I've assumed that although words should be broken at boundaries (which I've taken to mean spaces), words that are longer than the column number will need to be split across multiple lines.
+In implementing the above, I've assumed that although words should be broken at word boundaries (spaces), words that are longer than the column number will need to be split across multiple lines.
 
 ## Technologies used
 * Python3 (version 3.8.6), including unittest
