@@ -4,7 +4,7 @@ class Wrapper:
         if len(string) <= column_length:
             return string
         
-        #Between 0 and column_length, find the highest index where there is a space
+        #Between indexes of 0 and column_length+1, find the highest index where there is a space
         #(if no space found, rfind will return -1)
         breakPoint = string.rfind(" ", 0, column_length+1)
         
@@ -20,7 +20,7 @@ class Wrapper:
             breakPoint = column_length
         
         # store the line then recursively call wrap,
-        # with string sliced from breakpoint to end of string
+        # with string sliced from breakPoint to end of string
         line = string[:breakPoint] + "\n"
         remaining_text = string[breakPoint:].strip()
         return line + self.wrap(remaining_text, column_length)
