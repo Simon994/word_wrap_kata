@@ -15,7 +15,7 @@ class Wrapper:
             next_word_length = string[afterBreak:].find(" ")
         else:
             next_word_length = len(string[afterBreak:])
-
+        
         if breakPoint == -1 or next_word_length > column_length:
             breakPoint = column_length
         
