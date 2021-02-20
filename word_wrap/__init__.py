@@ -1,12 +1,12 @@
 class Wrapper:
     @staticmethod
     def wrap(string, column_length):
-        # if length of string is less than column_length, simply return string
+        # if length of string is <= column_length, simply return string
         if len(string) <= column_length:
             return string
         
         #Between indexes of 0 and column_length+1, find the highest index where there is a space
-        #(if no space found, rfind will return -1)
+        #i.e., the breakPoint. If no space found, rfind will return -1
         breakPoint = string.rfind(" ", 0, column_length+1)
         
         # find the length of the next word in the string
